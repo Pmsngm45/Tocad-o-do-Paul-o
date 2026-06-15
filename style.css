@@ -1,56 +1,33 @@
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
 body {
-  margin: 0;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background: #9ad49a;
   color: rgb(213, 64, 64);
-  font-family: Arial;
-  overflow: hidden;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  position: relative;
 }
 
-.deft{
-   position: relative;
-  height: 277px;
-  left: 100px;
-  bottom: 200px;
-}
-
-/* 🎨 DECORAÇÕES */
-.decorações {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-}
-
-.edit {
-  height: 150px;
-}
-
-/* 🕷️ LADO DIREITO */
-.radio {
-  position: absolute;
-  right: 20px;
-  top: 120px;
-}
-
-.radio img {
-  width: 180px;
-}
-
-/* 🎧 PLAYER */
+/* PLAYER */
 .player {
   background: #026afd;
-  padding: 30px;
+  padding: 25px;
   border-radius: 12px;
   text-align: center;
-  width: 320px;
-  position: relative;
-  left: 430px;
+  width: 90%;
+  max-width: 350px;
 }
 
-/* 🔽 SELECT */
+/* SELECT */
 select {
   width: 100%;
   padding: 10px;
@@ -60,57 +37,136 @@ select {
   outline: none;
 }
 
-/* 🎵 AUDIO */
+/* AUDIO */
 audio {
   width: 100%;
-  margin-top: 10px;
 }
 
-/* 📊 STATUS */
+/* STATUS */
 #status {
   margin-top: 10px;
   font-size: 14px;
   color: #000;
 }
 
-/* 🎶 TEXTO */
 .TOCADÃO {
   color: white;
   font-weight: bold;
   margin: 5px 0;
 }
+
+/* ANIMAÇÃO */
 .meme {
   animation: float 3s infinite ease-in-out;
 }
 
+@keyframes float {
+  0%,100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
 
+/* DECORAÇÕES */
+.decorações,
+.radio,
+.deft,
+.tere,
+.right,
+.left,
+.fad {
+  position: absolute;
+}
 
+.edit {
+  width: 120px;
+  height: auto;
+}
 
-/* cantos */
+.deft {
+  top: 20px;
+  left: 20px;
+  height: 180px;
+}
+
+.radio {
+  top: 20px;
+  right: 20px;
+}
+
+.radio img {
+  width: 150px;
+}
+
 .tere {
-  top: 200px;
-  left: 500px;
-  position: relative;
-  height: 270px;
+  bottom: 20px;
+  right: 20px;
+  height: 200px;
 }
 
 .right {
-  top: 200px;
-  right: 810px;
-    position: relative;
-    height: 170px;
-
+  bottom: 20px;
+  left: 20px;
+  height: 160px;
 }
 
-.left{
-  position: relative;
-  height: 200px;
-
-  bottom: 290px;
+.left {
+  top: 50%;
+  left: 200px;
+  transform: translateY(-50%);
+  height: 190px;
 }
-.fad{
-position: relative;
-right: 1100px;
-height: 250px;
-bottom: 230px;
+
+.fad {
+  top: 50%;
+  right: 200px;
+  transform: translateY(-50%);
+  height: 180px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+
+  .player {
+    width: 95%;
+    max-width: 300px;
+    padding: 20px;
+  }
+
+  .deft,
+  .tere,
+  .right,
+  .left,
+  .fad,
+  .radio img {
+    height: 80px;
+    width: auto;
+  }
+
+  .radio {
+    top: 10px;
+    right: 10px;
+  }
+
+  .deft {
+    top: 10px;
+    left: 10px;
+  }
+
+  .tere {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .right {
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .left,
+  .fad {
+    display: none; /* esconde algumas imagens no celular */
+  }
 }
